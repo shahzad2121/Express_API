@@ -23,6 +23,13 @@ function postFriend(req, res) {
     });
   }
 
+function postFriend(req, res) {
+  if (!req.body.name) {
+    return res.status(400).json({
+      error: "name is missing",
+    });
+  }
+
   // adding new friend with the help of .name
   // id will bne assigned automatically as the model length will be increased
   const newFriend = {
