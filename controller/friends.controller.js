@@ -3,6 +3,9 @@ const model = require('../models/friends.model')
 function getFriends(req, res) {
   res.send(model);
 }
+function getFriends(req, res) {
+  res.send(model);
+}
 
 function getFriend(req, res) {
   //divide request parameters with friendId
