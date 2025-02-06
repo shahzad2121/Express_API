@@ -1,8 +1,5 @@
-const model = require('../models/friends.model')
+const model = require("../models/friends.model");
 
-function getFriends(req, res) {
-  res.send(model);
-}
 function getFriends(req, res) {
   res.send(model);
 }
@@ -10,7 +7,7 @@ function getFriends(req, res) {
 function getFriend(req, res) {
   //divide request parameters with friendId
   //as it is divided on the basis of
-  const friendId = +req.params.friendId;
+  const friendId = Number(req.params.friendId);
   const friend = model[friendId];
   if (friend) {
     res.status(200).json(friend);
@@ -25,14 +22,6 @@ function postFriend(req, res) {
       error: "name is missing",
     });
   }
-
-function postFriend(req, res) {
-  if (!req.body.name) {
-    return res.status(400).json({
-      error: "name is missing",
-    });
-  }
-
   // adding new friend with the help of .name
   // id will bne assigned automatically as the model length will be increased
   const newFriend = {
